@@ -1,0 +1,140 @@
+.Program{
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.programs img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.programs{
+    flex-basis: 31%;
+    position: relative;
+}
+.caption{
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(20, 29, 92, 0.669);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    padding-top: 70%;
+    transition: 0.4s;
+}
+.caption i{
+font-size: 38px;
+padding: 23px;
+}
+.programs:hover .caption{
+    opacity: 1;
+    padding-top: 0;
+}
+.caption button{
+    height: 38px;
+    width: 130px;
+    margin-top: 13px;
+    border-radius: 20px;
+  color: #2a2626;
+  font-size: 14px;
+  font-weight: 700;
+   background-color: rgba(224, 238, 239, 0.908);
+}
+.caption button:hover{
+    cursor: pointer;
+    background-color: rgba(197, 210, 210, 0.533);
+}
+
+@media (max-width: 1024px) {
+    .Program {
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .programs {
+        flex-basis: 100%; 
+        margin-bottom: 20px;
+        width: 362px;
+    }
+
+    .caption {
+        padding-top: 60%; 
+    }
+
+    .caption i {
+        font-size: 30px; 
+        padding: 15px;
+    }
+
+    .caption button {
+        width: 120px;
+        font-size: 12px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Program {
+        margin: 40px auto; 
+        padding: 0 10px; 
+    }
+
+    .programs {
+        flex-basis: 100%; 
+        margin-bottom: 20px;
+    }
+
+    .caption {
+        padding-top: 50%;
+    }
+
+    .caption i {
+        font-size: 28px;
+        padding: 18px;
+    }
+
+    .caption button {
+        width: 110px;
+        font-size: 12px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    .Program {
+        margin: 20px auto; 
+        padding: 0 5px;
+    }
+
+    .programs {
+        flex-basis: 100%; 
+        margin-bottom: 15px;
+    }
+
+
+    .caption {
+        padding-top: 40%; 
+    }
+
+    .caption i {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    .caption button {
+        width: 100px;
+        font-size: 11px;
+        height: 30px;
+    }
+}

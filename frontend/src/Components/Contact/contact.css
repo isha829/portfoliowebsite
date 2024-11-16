@@ -1,0 +1,207 @@
+
+    .Contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 80px auto;
+        max-width: 90%;
+    }
+    
+    .contact-col {
+        flex-basis: 48%;
+        color: #676767;
+        background-color: #f9f9f9; 
+        border: 2px solid #ccc; 
+        padding: 20px;
+        border-radius: 18px; 
+        box-shadow: 0 10px 8px rgba(87, 74, 74, 0.524);
+        margin: 20px 0; 
+        height: auto; 
+        min-height: 450px; 
+       
+    }
+    .contact-col-left {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px; 
+        margin-top: 10px; 
+    }
+    
+    .contact-content p {
+        margin-top: 13px;
+        font-size: 18px;
+        line-height: 1.5;
+        flex: 1;
+    }
+    
+    .contact-content img {
+        width: 171px;
+        height: 174px;
+        border-radius: 8px; 
+    }
+    
+    .contact-col h2 {
+        font-weight: 600;
+        text-shadow: 5px 7px 6px rgba(133, 118, 118, 0.83);
+        font-size: 30px;
+        color: #094762;
+        margin-bottom: 20px;
+    }
+    
+    .contact-col p {
+        max-width: 450px;
+    }
+    
+    .contact-section h3 {
+        margin-left: 20px;
+        font-size: 20px;
+        color: #094762;
+        text-shadow: 5px 4px 6px rgba(133, 118, 118, 0.83);
+        margin-bottom: 10px;
+    }
+    
+    .social-icons {
+        margin-top: 22px;
+        margin-left: 22px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px; 
+    }
+    
+    .social-icons li {
+        list-style: none;
+    }
+
+    
+    .social-icons li a {
+        color: #094762;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        box-shadow: 0 7px 10px rgba(79, 69, 69, 0.672);
+        transition: transform 0.3s ease;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .social-icons li a:hover {
+     background-color: #9d919192;
+        transform: translateY(-5px);
+    }
+
+.Contact form input, .Contact form textarea{
+    display: block;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    resize: none;
+    background: #EBECFE;
+}
+.contact-col span{
+    display: block;
+    margin: 20px 0;
+}
+.btn {
+    display: flex;          
+    align-items: center;      
+    justify-content: center;    
+    width: 160px;
+    margin-left: 15px;
+    padding: 21px 16px;
+  font-weight: 600;
+    margin-top: 20px;
+    height: 36px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 7px 10px rgba(79, 69, 69, 0.672);
+    border: 2px solid rgba(133, 118, 118, 0.627);
+    border-radius: 23px;
+  }
+  
+  .btn img {
+    width: 30px;
+    margin-left: 8px;    
+    filter: invert(6) grayscale(50%) brightness(60) sepia(100%) hue-rotate(180deg);
+  }
+  .btn:hover {
+    background-color: #d7d7d7b4; 
+    transform: scale(1.1); 
+  }
+  @media (max-width: 1024px) {
+    .Contact {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .contact-col {
+        flex-basis: 100%; 
+        max-width: 100%; 
+        margin-bottom: 30px;
+    }
+
+    .contact-content {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .contact-content img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Contact {
+        margin: 50px auto;
+    }
+
+    .contact-col {
+        padding: 15px;
+    }
+
+    .contact-content img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .social-icons {
+        justify-content: center; 
+    }
+
+    .btn {
+        width: 140px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-content img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn {
+        width: 120px;
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+.success-message {
+    color: rgb(44, 76, 119);
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
