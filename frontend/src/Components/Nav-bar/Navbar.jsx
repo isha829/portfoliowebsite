@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import './Navbar.css';
@@ -25,13 +24,12 @@ const Navbar = () => {
     <nav className={`navbar-container ${sticky ? 'dark-nav' : ''}`}>
      
       <div className="logoimg">
-        <img src={logo} alt="logo" />
-        <p>Jhonathan Methewn</p>
+        <strong>Inshira Attique</strong>
       </div>
 
       <div className="menu-icon" onClick={toggleMenu}>
         {mobileMenu ? (
-          <span className="back-icon">X</span> 
+          <span className="back-icon">✕</span> 
         ) : (
           <>
             <div className="line"></div>
@@ -41,30 +39,29 @@ const Navbar = () => {
         )}
       </div>
 
-   
       <ul className={mobileMenu ? 'show-mobile-menu' : 'hide-mobile-menu'}>
         <li>
-          <Link to="Hero" smooth={true} offset={0} duration={500} onClick={toggleMenu}>
+          <Link to="hero" smooth={true} offset={-80} duration={500} onClick={toggleMenu}>
             Home
           </Link>
         </li>
         <li>
-          <Link to="About" smooth={true} offset={-160} duration={500} onClick={toggleMenu}>
+          <Link to="about" smooth={true} offset={-80} duration={500} onClick={toggleMenu}>
             About me
           </Link>
         </li>
         <li>
-          <Link to="programs" smooth={true} offset={-250} duration={500} onClick={toggleMenu}>
+          <Link to="projects" smooth={true} offset={-80} duration={500} onClick={toggleMenu}>
             Projects
           </Link>
         </li>
         <li>
-          <Link to="skills-section" smooth={true} offset={-150} duration={500} onClick={toggleMenu}>
+          <Link to="skills" smooth={true} offset={-80} duration={500} onClick={toggleMenu}>
             Skills
           </Link>
         </li>
         <li id="btn">
-          <Link to="Contact" smooth={true} offset={-260} duration={500} onClick={toggleMenu}>
+          <Link to="contact" smooth={true} offset={20} duration={500} onClick={toggleMenu}>
             Contact me
           </Link>
         </li>
@@ -74,4 +71,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

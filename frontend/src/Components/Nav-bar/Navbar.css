@@ -10,11 +10,12 @@ body {
 }
 nav {
   width: 100%;
-  color: #fff;
+  color: #ffffff;
   padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,25 +25,16 @@ nav {
 }
 
 nav.dark-nav {
-  background: #212534e4;
-}
-.logoimg {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+  background: #bdc6e6e4;
+  color: black;
+  font-weight: 500;
 }
 
-.logoimg img {
-  height: 50px;
-  width: 50px;
-  margin-top: 11px;
-  margin-left: 34px;
-}
 
-.logoimg p {
+.logoimg strong {
 
   font-weight: bold;
-  margin-left: 0px;
+  margin-left: 100px;
   font-size: 20px;
 }
 nav ul {
@@ -56,15 +48,16 @@ nav ul {
 
 nav ul li {
   list-style: none;
-  margin: 0 15px;
-  font-size: 16px;
+  margin: 0 35px;
+  font-size: 18px;
   cursor: pointer;
   transition: color 0.3s, text-decoration 0.3s;
 }
 
 nav ul li:hover {
-  color: rgb(222, 212, 212);
-  text-decoration: underline;
+  color: rgb(165, 40, 170);
+ 
+  transform: scale(1.35);
 }
 #btn {
   border: 0;
@@ -83,7 +76,8 @@ nav ul li:hover {
 }
 
 #btn:hover {
-  background-color: #f7e5e5;
+  background-color: #bfe8e1;
+  transform: scale(1.25);
 }
 .menu-icon {
   display: none;

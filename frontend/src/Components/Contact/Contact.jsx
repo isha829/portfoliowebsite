@@ -1,22 +1,19 @@
-
 import React, { useState } from "react";
 import "./contact.css";
-import white_arrow from "../../assets/white-arrow.png";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-
-library.add(fab);
+import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setIsSending(true); 
     setIsSent(false); 
+    setShowSuccess(false);
 
     const formData = new FormData(event.target);
     formData.append("access_key", "ecd1da4b-6fcf-4f30-b7a2-d2fafb2cff27");
@@ -36,96 +33,136 @@ const Contact = () => {
     setIsSending(false); 
 
     if (res.success) {
-      setIsSent(true); 
+      setIsSent(true);
+      setShowSuccess(true);
+      event.target.reset();
+      
+      // Auto-hide success message after 3 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+        setIsSent(false);
+      }, 3000);
     } else {
       alert("There was an issue sending your message. Please try again.");
     }
   };
 
   return (
-    <div className="Contact">
-      <div className="contact-col">
-        <div className="contact-col-left">
-          <h2>Jonathan Methew</h2>
-          <div className="contact-content">
-            <p>
-              A dedicated Web3 developer focused on
-              decentralized applications and
-              blockchain technology.
-            </p>
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        {/* Section Header */}
+        <div className="contact-header">
+          <span className="contact-badge">✦ GET IN TOUCH</span>
+          <h2 className="contact-title">
+            Let's <span className="contact-gradient">Connect</span>
+          </h2>
+          <p className="contact-subtitle">
+            Have a project in mind? I'd love to hear from you!
+          </p>
+        </div>
+
+        <div className="contact-content">
+          {/* Left Column - Contact Info */}
+          <div className="contact-info">
+            <div className="contact-info-card">
+              <h3 className="info-name">Inshira Attique</h3>
+              <p className="info-bio">
+                Frontend developer passionate about building modern web applications 
+                with React and React Native. Currently expanding skills in backend development.
+              </p>
+            </div>
+
+            <div className="contact-details">
+              <div className="contact-detail-item">
+                <div className="detail-icon">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </div>
+                <div className="detail-text">
+                  <h4>Email</h4>
+                  <p>inshiraattique@gmail.com</p>
+                </div>
+              </div>
+              <div className="contact-detail-item">
+                <div className="detail-icon">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} />
+                </div>
+                <div className="detail-text">
+                  <h4>Location</h4>
+                  <p>Pakistan</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="contact-social">
+              <h3>Connect with Me</h3>
+              <div className="social-icons">
+                <a href="https://www.facebook.com/inshira.attique/" className="social-icon" aria-label="Facebook">
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </a>
+                <a href="https://www.linkedin.com/in/inshira-attique-86bb16406/" className="social-icon" aria-label="LinkedIn">
+                  <FontAwesomeIcon icon={faLinkedinIn} />
+                </a>
+                <a href="https://github.com/isha829" className="social-icon" aria-label="GitHub">
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div className="contact-form-wrapper">
+            <form onSubmit={onSubmit} className="contact-form">
+              <div className="form-group">
+                <label>Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Message</label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" className="submit-btn" disabled={isSending}>
+                {isSending ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    Send Message
+                    <FontAwesomeIcon icon={faPaperPlane} />
+                  </>
+                )}
+              </button>
+              
+              {/* Success Message - Auto hides after 3 seconds */}
+              {showSuccess && (
+                <div className="success-message">
+                  <span className="success-icon">✓</span>
+                  Your message has been sent successfully!
+                </div>
+              )}
+            </form>
           </div>
         </div>
-        <div className="contact-section follow-us">
-          <h3>Connect with Me</h3>
-          <ul className="social-icons">
-            <li>
-              <a href="https://www.facebook.com/AliHassan" target="_" rel=" ">
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.twitter.com/NividKoradiya"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/NividKoradiya"
-                target=" "
-                rel=" "
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/NividKoradiya"
-                target="_"
-                rel=" "
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
-      <div className="contact-col">
-        <form onSubmit={onSubmit}>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-          />
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
-          <label>Message</label>
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Enter your message"
-            required
-          ></textarea>
-          <button type="submit" className="btn dark-btn" disabled={isSending}>
-            {isSending ? "Sending..." : "Submit Now"}
-            {!isSending && <img src={white_arrow} alt="" />}
-          </button>
-        </form>
-        {isSent && <p className="success-message">Your message has been sent successfully!</p>}
-      </div>
-    </div>
+    </section>
   );
 };
 
 export default Contact;
-
