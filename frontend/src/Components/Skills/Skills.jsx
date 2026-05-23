@@ -7,7 +7,7 @@ import {
   faNode, 
   faCss3Alt,
   faHtml5,
-  faGitAlt
+  // faGitAlt
 } from "@fortawesome/free-brands-svg-icons";
 import { 
   faMobile,

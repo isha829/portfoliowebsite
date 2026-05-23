@@ -10,8 +10,8 @@ import {
   faCode, 
   faServer,
   faGraduationCap,
-  faProjectDiagram,
-  faEnvelope
+  // faProjectDiagram,
+  // faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
