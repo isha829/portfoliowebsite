@@ -6,13 +6,11 @@ import { faEnvelope, faMapMarkerAlt, faPaperPlane } from '@fortawesome/free-soli
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
-  const [isSent, setIsSent] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setIsSending(true); 
-    setIsSent(false); 
+    setIsSending(true);
     setShowSuccess(false);
 
     const formData = new FormData(event.target);
@@ -30,17 +28,15 @@ const Contact = () => {
       body: json
     }).then((res) => res.json());
 
-    setIsSending(false); 
+    setIsSending(false);
 
     if (res.success) {
-      setIsSent(true);
       setShowSuccess(true);
       event.target.reset();
       
       // Auto-hide success message after 3 seconds
       setTimeout(() => {
         setShowSuccess(false);
-        setIsSent(false);
       }, 3000);
     } else {
       alert("There was an issue sending your message. Please try again.");
