@@ -95,7 +95,7 @@ const Contact = () => {
                 <a href="https://www.facebook.com/inshira.attique/" className="social-icon" aria-label="Facebook">
                   <FontAwesomeIcon icon={faFacebookF} />
                 </a>
-                <a href="https://www.linkedin.com/in/inshira-attique-86bb16406/" className="social-icon" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/inshira-attique-052501411/" className="social-icon" aria-label="LinkedIn">
                   <FontAwesomeIcon icon={faLinkedinIn} />
                 </a>
                 <a href="https://github.com/isha829" className="social-icon" aria-label="GitHub">

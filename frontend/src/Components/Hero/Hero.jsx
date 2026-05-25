@@ -95,7 +95,7 @@ const Hero = () => {
               <a href="https://github.com/isha829" className="hero__social-link" aria-label="GitHub">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-              <a href="https://www.linkedin.com/in/inshira-attique-86bb16406/" className="hero__social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/inshira-attique-052501411/" className="hero__social-link" aria-label="LinkedIn">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
              
